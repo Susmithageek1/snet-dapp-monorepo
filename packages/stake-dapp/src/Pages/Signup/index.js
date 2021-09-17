@@ -20,6 +20,7 @@ const Signup = props => {
         setSignupError(error.message);
         return;
       }
+      setSignupError("Signup Failed");
 
     }
   };
