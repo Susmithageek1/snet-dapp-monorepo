@@ -16,15 +16,11 @@ const Signup = props => {
       await dispatch(signupActions.signup(nickname, email, password));
       history.push(GlobalRoutes.SIGNUP_CONFIRM.path);
     } catch (error) {
-     if (error.name === "AuthError") {
+     if (error.name === "AuthError" OR error.name === "UsernameExistsException") {
         setSignupError(error.message);
         return;
       }
 
-      if (error.name === "UsernameExistsException") {
-        setSignupError(error.message);
-        return;
-      }
     }
   };
   return <SNETSignup info={signupInfo} onSubmit={handleSubmit} signupError={signupError} />;
