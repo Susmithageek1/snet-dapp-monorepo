@@ -20,7 +20,7 @@ const Signup = props => {
         setSignupError(error.message);
         return;
       }
-      setSignupError("Singup Failed");
+      setSignupError("User is already Registered");
     }
   };
   return (
